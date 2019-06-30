@@ -1,0 +1,119 @@
+/*Colors*/
+$red: #ff3333;
+$yellow: #ffe400;
+$lightWhite: #F5F5F5;
+$gray: #686c6d;
+$lightBLue: #67cfee;
+$linear: linear-gradient(90deg, #3f4593, #5960bd);
+$textColor: #484848;
+$dateColor: #a8a9aa;
+
+
+/* Reset*/
+*,
+*::before,
+*::after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+/****** NavBar Style *****/
+.navbar {
+    background-color: $gray;
+}
+
+/****** Collection Style *****/
+
+.collection {
+    padding: 5px;
+    background-color: $lightWhite;
+    
+    /****** Title *****/
+
+    &__title {
+        &--text {
+            color: $textColor;
+            font-weight: 400;
+            font-size:18px;
+            font-family: cursive ;
+            position: relative;
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left:0;
+                height:2px;
+                width: 42px;
+                background: $yellow;
+                
+            }
+            @media (min-width: 538px) {
+                font-size:20px
+            }
+        }
+    }
+
+    /****** News Box *****/
+    
+    .report {
+        margin-bottom: 10px;
+        position:relative;
+        .info {
+            position: absolute;
+            bottom:18px;
+            left: 12px;
+            width:97%;
+
+            p {
+                color: #FFF;
+                font:400 22px cursive;
+                cursor: pointer;
+                margin-bottom:0;
+                &.more {
+                    text-overflow: ellipsis;
+                    overflow: hidden; 
+                    height: 1.2em; 
+                    white-space: nowrap;
+                }
+                a {
+                    text-decoration: none;
+                    color:inherit;
+                }
+            }
+            span {
+                color: $dateColor;
+                font: 300 14px cursive;
+            }
+            
+        }
+    }
+
+    /****** View More Button *****/
+    
+    &__button-wrapper {
+        width:100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 15px;
+        .btn-more {
+            border:2px solid $gray;
+            background-color:transparent;
+            position: relative;
+            width: 150px;
+            text-transform: uppercase;
+            outline: none;
+            transition: all .5s ease-in-out;
+            
+            &:hover {
+            transform: scale(1.1);
+            }
+        }
+    }
+    
+    img {
+        max-width: 100%;
+    }
+}
